@@ -1,0 +1,88 @@
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="vuejs-logo.png" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>V-MODEL com Vue JS</title>
+</head>
+<body>
+    <!--v-model baseado nos meus estudos contínuos em Vue Js!!-->
+
+     <style>
+       body{
+           padding: 0;
+           margin: 0;
+           background-image: url('./img/verde.jpg');
+           float: right;
+           background-repeat: no-repeat;
+           display: flex;
+           font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       }.vue img{
+           position: absolute;
+           left: 10px;
+           top: 50px;
+           width: 300px;
+           z-index: 999;
+       }h1{
+           padding: 10px;
+       }#app{
+           margin: 20px;
+           border: 2px solid #41b883;
+           background: white;
+       }#app form{
+           padding: 10px;
+           display: flex;
+           flex-direction: column;
+       }#app input{
+           font-size: 20px;
+           align-items: center;
+           justify-content: center;
+       }.button{
+           margin: 10px;
+           color: white;
+           background-color: #41b883;
+           font-size: 15px;
+       }span{
+           margin:5px;
+           color:#41b883;
+           font-size: 20px;
+       }@media(max-width: 840px){
+        .vue img{
+           display: none;
+        }#app{
+           margin: 5px;
+       }
+       }
+     </style>
+      <div class="vue">
+          <img src="img/vue.png" alt="">
+      </div>
+     <div id="app">
+        <h1>{{titulo}}</h1>
+        <hr>
+        <form action="">
+        <span><b>DIGITE O SEU NOME:</b></span><br> <input type="name" placeholder="Digite o seu nome" v-model="nome"><br>
+        <span><b>DIGITE O SEU E-MAIL:</b></span><br><input type="email" placeholder="Digite o seu E-Mail" name="" v-model="email" id=""><br>
+        <input type="submit" value="Enviar" class="button">
+        <input type="submit" value="Cancelar" class="button">
+        </form>
+
+       <h2>Seu nome é {{nome}}</h2> 
+       <h2>Seu e-mail é {{email}}</h2>
+     </div>
+
+     <!--Script made in Lib Vue JS!!-->
+     <script>
+       let app = new Vue({
+        el : "#app",
+        data: {
+          titulo: "Bem vindos a sua aula de Vue JS",
+          nome: "",
+          email: ""
+        }
+       });
+     </script>
+</body>
+</html>
